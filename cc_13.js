@@ -18,9 +18,11 @@ function createEmployeeCard (name, position) { //function to create metric cards
         const removeButton = document.createElement('Button'); //creating a remove button
         removeButton.innerHTML = 'Remove'; //inside the remove button is the word remove
         employeeCard.appendChild(removeButton); //this appends the remove button to the employee card
+            //TASK 4
             removeButton.addEventListener('click', () => { //basically says that on click we will remove the 
                 dashboard.removeChild(employeeCard);        //employeeCard from the dashboard
-            });
+                event.stopPropagation();    //stopProp makes it so that if you press the remove button
+            });                             //then Employee Card clicked wont be logged
     
 };
 
@@ -39,4 +41,9 @@ metricCardsArray.forEach((card) => {    //for each metric card in array, update 
     card.style.border = '2px solid black'   //giving each card a black border
 });
 
+//Task 4
+
+employeeContainer.addEventListener('click', () => { //added event listener which, on click, logs that
+    console.log('Employee Card Clicked')    //the employee card was clicked.
+});
         
