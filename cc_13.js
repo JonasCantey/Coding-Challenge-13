@@ -22,9 +22,21 @@ function createEmployeeCard (name, position) { //function to create metric cards
                 dashboard.removeChild(employeeCard);        //employeeCard from the dashboard
             });
     
-}
+};
 
 createEmployeeCard("Mark Dangle", "Junior Analyst");
 createEmployeeCard("Lebron James", "Baller");
 createEmployeeCard("Ike Turner", "HR rep");
+
+
+//Task 3: Converting NodeLists to Arrays for Bulk Updates
+const metricCards = document.querySelectorAll('.metric-card'); //selects all metric cards
+
+const metricCardsArray = Array.from(metricCards);   //converts from nodelist to array
+
+metricCardsArray.forEach((card) => {    //for each metric card in array, update by:
+    card.style.backgroundColor = 'lightgreen'; //changing color of background to lightgreen
+    card.style.border = '2px solid black'   //giving each card a black border
+});
+
         
